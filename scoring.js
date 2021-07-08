@@ -1,11 +1,3 @@
-/* const point = 1;
-let yardsPassing = 14.52*point;
-let passingTouchdown = ;
-let interception = point
-let rushing = ;
-let rushingTouchdown =;
-let rushingFumble = */
-
 function qbScoring(qbStats) {
   let passingYardScore = qbStats.passing.yards / 25
   let passingTouchdownScore = qbStats.passing.touchdowns * 6
@@ -54,10 +46,12 @@ function wrScoring(wrStats) {
 }
 
 function teScoring(teStats) {
-  let rushingYardScore = teStats.rushing.yards / 10
-  
+  let receptionScore = teStats.receiving.receptions * 1
+  let receivingYardScore = teStats.receiving.yards / 10
+  let receivingTouchdownScore = teStats.receiving.touchdowns * 6
+  let receivingFumbleScore = teStats.receiving.fumbles * -3
 
-  return 
+  return receptionScore + receivingYardScore + receivingTouchdownScore + receivingFumbleScore
 }
 
 function checkPosition(player) { // make switch statements
@@ -80,6 +74,4 @@ function calculateScore(player) {
 
   return score
 }
-
-
 module.exports = calculateScore
