@@ -18,14 +18,21 @@ function qbScoring(qbStats) {
 }
 
 function rbScoring(rbStats) {
-  let passingYardScore = rbStats.passing.yards / 25
-  let passingTouchdownScore = rbStats.passing.touchdowns * 6
-  let interceptionScore = rbStats.passing.interceptions * -3
   let rushingYardScore = rbStats.rushing.yards / 10
   let rushingTouchdownScore = rbStats.rushing.touchdowns * 6
   let rushingFumbleScore = rbStats.rushing.fumbles * -3
+  let receptionScore = rbStats.receiving.receptions * 1
+  let receivingYardScore = rbStats.receiving.yards / 10
+  let receivingTouchdownScore = rbStats.receiving.touchdowns * 6
+  let receivingFumbleScore = rbStats.receiving.fumbles * -3
+  let kickreturnYardScore = rbStats.kickreturn.yards / 15
+  let kickreturnTouchdownScore = rbStats.kickreturn.touchdowns * 6
+  let kickreturnFumbleScore = rbStats.kickreturn.fumbles * -3
+  let puntreturnYardScore = rbStats.puntreturn.yards / 15
+  let puntreturnTouchdownScore = rbStats.puntreturn.touchdowns * 6
+  let puntreturnFumbleScore = rbStats.puntreturn.fumbles * -3
 
-  return passingYardScore + passingTouchdownScore + interceptionScore + rushingYardScore + rushingTouchdownScore + rushingFumbleScore
+  return rushingYardScore + rushingTouchdownScore + rushingFumbleScore + receptionScore + receivingYardScore + receivingTouchdownScore + receivingFumbleScore + kickreturnYardScore + kickreturnTouchdownScore + kickreturnFumbleScore + puntreturnYardScore + puntreturnTouchdownScore + puntreturnFumbleScore
 }
 
 function checkPosition(player) { // make switch statements
