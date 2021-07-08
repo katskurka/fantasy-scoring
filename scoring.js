@@ -25,12 +25,12 @@ function rbScoring(rbStats) {
   let receivingYardScore = rbStats.receiving.yards / 10
   let receivingTouchdownScore = rbStats.receiving.touchdowns * 6
   let receivingFumbleScore = rbStats.receiving.fumbles * -3
-  let kickreturnYardScore = rbStats.kickreturn.yards / 15
-  let kickreturnTouchdownScore = rbStats.kickreturn.touchdowns * 6
-  let kickreturnFumbleScore = rbStats.kickreturn.fumbles * -3
-  let puntreturnYardScore = rbStats.puntreturn.yards / 15
-  let puntreturnTouchdownScore = rbStats.puntreturn.touchdowns * 6
-  let puntreturnFumbleScore = rbStats.puntreturn.fumbles * -3
+  let kickreturnYardScore = rbStats.return.kickreturn.yards / 15
+  let kickreturnTouchdownScore = rbStats.return.kickreturn.touchdowns * 6
+  let kickreturnFumbleScore = rbStats.return.kickreturn.fumbles * -3
+  let puntreturnYardScore = rbStats.return.puntreturn.yards / 15
+  let puntreturnTouchdownScore = rbStats.return.puntreturn.touchdowns * 6
+  let puntreturnFumbleScore = rbStats.return.puntreturn.fumbles * -3
 
   return rushingYardScore + rushingTouchdownScore + rushingFumbleScore + receptionScore + receivingYardScore + receivingTouchdownScore + receivingFumbleScore + kickreturnYardScore + kickreturnTouchdownScore + kickreturnFumbleScore + puntreturnYardScore + puntreturnTouchdownScore + puntreturnFumbleScore
 }
