@@ -35,6 +35,31 @@ function rbScoring(rbStats) {
   return rushingYardScore + rushingTouchdownScore + rushingFumbleScore + receptionScore + receivingYardScore + receivingTouchdownScore + receivingFumbleScore + kickreturnYardScore + kickreturnTouchdownScore + kickreturnFumbleScore + puntreturnYardScore + puntreturnTouchdownScore + puntreturnFumbleScore
 }
 
+function wrScoring(wrStats) {
+  let rushingYardScore = wrStats.rushing.yards / 10
+  let rushingTouchdownScore = wrStats.rushing.touchdowns * 6
+  let rushingFumbleScore = wrStats.rushing.fumbles * -3
+  let receptionScore = wrStats.receiving.receptions * 1
+  let receivingYardScore = wrStats.receiving.yards / 10
+  let receivingTouchdownScore = wrStats.receiving.touchdowns * 6
+  let receivingFumbleScore = wrStats.receiving.fumbles * -3
+  let kickreturnYardScore = wrStats.return.kickreturn.yards / 15
+  let kickreturnTouchdownScore = wrStats.return.kickreturn.touchdowns * 6
+  let kickreturnFumbleScore = wrStats.return.kickreturn.fumbles * -3
+  let puntreturnYardScore = wrStats.return.puntreturn.yards / 15
+  let puntreturnTouchdownScore = wrStats.return.puntreturn.touchdowns * 6
+  let puntreturnFumbleScore = wrStats.return.puntreturn.fumbles * -3
+
+  return rushingYardScore + rushingTouchdownScore + rushingFumbleScore + receptionScore + receivingYardScore + receivingTouchdownScore + receivingFumbleScore + kickreturnYardScore + kickreturnTouchdownScore + kickreturnFumbleScore + puntreturnYardScore + puntreturnTouchdownScore + puntreturnFumbleScore
+}
+
+function teScoring(teStats) {
+  let rushingYardScore = teStats.rushing.yards / 10
+  
+
+  return 
+}
+
 function checkPosition(player) { // make switch statements
   if (player.position === 'QB') {
     return qbScoring(player.stats)
