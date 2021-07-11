@@ -67,7 +67,7 @@ function teScoring(teStats) {
   return receptionScore + receivingYardScore + receivingTouchdownScore + receivingFumbleScore
 }
 
-function checkPosition(player) { // make switch statements
+/* function checkPosition(player) { // make switch statements
   if (player.position === 'QB') {
     return qbScoring(player.stats)
   }
@@ -81,7 +81,25 @@ function checkPosition(player) { // make switch statements
     return teScoring(player.stats)
   }
   else return 0
+} */
+
+function checkPosition(player) {
+  switch (player.position) {
+    case 1: 'QB'
+      qbScoring(player.stats)
+      break
+    case 2: 'RB'
+      rbScoring(player.stats)
+      break
+    case 3: 'WR'
+      wrScoring(player.stats)
+      break
+    case 4: 'TE'
+      teScoring(player.stats)
+      break
+  }
 }
+
 function calculateScore(player) {
   let score = checkPosition(player)
 
