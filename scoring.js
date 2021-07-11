@@ -1,3 +1,4 @@
+// calculate the quarterback score
 function qbScoring(qbStats) {
   let passingYardScore = qbStats.passing.yards / 25
   let passingTouchdownScore = qbStats.passing.touchdowns * 6
@@ -12,6 +13,7 @@ function qbScoring(qbStats) {
   return passingScore + rushingScore
 }
 
+// calculate the running back score
 function rbScoring(rbStats) {
   let rushingYardScore = rbStats.rushing.yards / 10
   let rushingTouchdownScore = rbStats.rushing.touchdowns * 6
@@ -35,6 +37,7 @@ function rbScoring(rbStats) {
   return rushingScore + receivingScore + kickreturnScore + puntreturnScore
 }
 
+// calculate the wide receiver score
 function wrScoring(wrStats) {
   let rushingYardScore = wrStats.rushing.yards / 10
   let rushingTouchdownScore = wrStats.rushing.touchdowns * 6
@@ -58,6 +61,7 @@ function wrScoring(wrStats) {
   return rushingScore + receivingScore + kickreturnScore + puntreturnScore
 }
 
+// calculate the tight end score
 function teScoring(teStats) {
   let receptionScore = teStats.receiving.receptions * 1
   let receivingYardScore = teStats.receiving.yards / 10
@@ -83,26 +87,30 @@ function teScoring(teStats) {
   else return 0
 } */
 
-function checkPosition(player) {
-  switch (player.position) {
-    case 1: 'QB'
-      qbScoring(player.stats)
-      break
-    case 2: 'RB'
-      rbScoring(player.stats)
-      break
-    case 3: 'WR'
-      wrScoring(player.stats)
-      break
-    case 4: 'TE'
-      teScoring(player.stats)
-      break
-  }
-}
-
 function calculateScore(player) {
-  let score = checkPosition(player)
+  let score = 0
+
+  switch (player.position) {
+    case ('QB'):
+      score = qbScoring(player.stats)
+      break
+    case ('RB'):
+      score = rbScoring(player.stats)
+      break
+    case ('WR'):
+      score = wrScoring(player.stats)
+      break
+    case ('TE'):
+      score = teScoring(player.stats)
+  }
 
   return score
 }
+
+/* function calculateScore(player) {
+  let score = checkPosition(player)
+
+  return score
+} */
+
 module.exports = calculateScore
