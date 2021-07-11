@@ -6,7 +6,10 @@ function qbScoring(qbStats) {
   let rushingTouchdownScore = qbStats.rushing.touchdowns * 6
   let rushingFumbleScore = qbStats.rushing.fumbles * -3
 
-  return passingYardScore + passingTouchdownScore + interceptionScore + rushingYardScore + rushingTouchdownScore + rushingFumbleScore
+  let passingScore = passingYardScore + passingTouchdownScore + interceptionScore
+  let rushingScore = rushingYardScore + rushingTouchdownScore + rushingFumbleScore
+
+  return passingScore + rushingScore
 }
 
 function rbScoring(rbStats) {
@@ -24,7 +27,12 @@ function rbScoring(rbStats) {
   let puntreturnTouchdownScore = rbStats.return.puntreturn.touchdowns * 6
   let puntreturnFumbleScore = rbStats.return.puntreturn.fumbles * -3
 
-  return rushingYardScore + rushingTouchdownScore + rushingFumbleScore + receptionScore + receivingYardScore + receivingTouchdownScore + receivingFumbleScore + kickreturnYardScore + kickreturnTouchdownScore + kickreturnFumbleScore + puntreturnYardScore + puntreturnTouchdownScore + puntreturnFumbleScore
+  let rushingScore = rushingYardScore + rushingTouchdownScore + rushingFumbleScore + receptionScore
+  let receivingScore = receivingYardScore + receivingTouchdownScore + receivingFumbleScore
+  let kickreturnScore = kickreturnYardScore + kickreturnTouchdownScore + kickreturnFumbleScore
+  let puntreturnScore = puntreturnYardScore + puntreturnTouchdownScore + puntreturnFumbleScore
+
+  return rushingScore + receivingScore + kickreturnScore + puntreturnScore
 }
 
 function wrScoring(wrStats) {
@@ -42,7 +50,12 @@ function wrScoring(wrStats) {
   let puntreturnTouchdownScore = wrStats.return.puntreturn.touchdowns * 6
   let puntreturnFumbleScore = wrStats.return.puntreturn.fumbles * -3
 
-  return rushingYardScore + rushingTouchdownScore + rushingFumbleScore + receptionScore + receivingYardScore + receivingTouchdownScore + receivingFumbleScore + kickreturnYardScore + kickreturnTouchdownScore + kickreturnFumbleScore + puntreturnYardScore + puntreturnTouchdownScore + puntreturnFumbleScore
+  let rushingScore = rushingYardScore + rushingTouchdownScore + rushingFumbleScore + receptionScore
+  let receivingScore = receivingYardScore + receivingTouchdownScore + receivingFumbleScore
+  let kickreturnScore = kickreturnYardScore + kickreturnTouchdownScore + kickreturnFumbleScore
+  let puntreturnScore = puntreturnYardScore + puntreturnTouchdownScore + puntreturnFumbleScore
+
+  return rushingScore + receivingScore + kickreturnScore + puntreturnScore
 }
 
 function teScoring(teStats) {
