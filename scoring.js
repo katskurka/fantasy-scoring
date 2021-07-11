@@ -87,6 +87,7 @@ function teScoring(teStats) {
   else return 0
 } */
 
+// switch statement to calculate the score based on player position
 function calculateScore(player) {
   let score = 0
 
